@@ -1,0 +1,3 @@
+[submodule "lib/typeset"]
+	path = lib/typeset
+	url = https://github.com/bramstein/typeset
