@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>TeX on the Web</title>
+    <link rel="stylesheet" href="index.css">
+    <script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            jax: ["input/TeX","output/HTML-CSS", "output/PreviewHTML"],
+            extensions: ["tex2jax.js","MathMenu.js","MathZoom.js", "fast-preview.js", "AssistiveMML.js", "a11y/accessibility-menu.js"],
+            TeX: {
+              extensions: ["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js"]
+            },
+            "HTML-CSS": {
+                fonts: ['Latin-Modern'],
+            }
+        });
+
+        $(".content").css("visibility","hidden");
+
+        $(".content").load('@Url.Action("ActionResultMethod", "ControllerName",{controller parameters})', function () {
+          MathJax.Hub.Queue(
+            ["Typeset",MathJax.Hub,"content"],
+            function () {
+              $(".content").css("visibility",""); // may have to be "visible" rather than ""
+            }
+          );
+        });
+    </script>
+    <script type="text/javascript" async
+       src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js">
+    </script>
+</head>
+
+<body>
+    $$\let\Partial\partial \renewcommand{\partial}{\style{font-style:italic;position:relative;left:-0.06em}{\Partial}}$$
+    <div id="content">
+        <h1 class="title">How to Typeset on the Web</h1>
+        <h1 class="author">Constantine Theocharis</h1>
+        <h1 class="date">21 September 2019</h1>
+        <h1 class="section">Quadratic Equations</h1>
+        <p>When \(\partial A \; \partial 0 \; \partial N \; \partial S\) there are two solutions to \(ax^2 + bx + c = 0\) and they are:</p>
+        <p>$$ \hat{E}\psi(x,t) = \frac{\hat{p}^2}{2m} \frac{\partial ^2}{\partial x} \psi(x,t) + V(x,t)\psi (x,t) $$</p>
+        <h2 class="subsection">Straight line equations</h2>
+        <p>The equation for a straight line is usually written as \(y = mx + c\).</p>
+        <h2 class="subsection">Some examples</h2>
+        <p>A paragraph with an inline equation: \(s = \frac{100}{9.58} = 10.43841336\). Notice how the fraction has been scaled down, so that it fits within a line of text. Even complicsted equations work quite well. \(x = {-b \pm \sqrt{b^2-4ac} \over 2a}\) still fits in the paragraph. Sort of. In the old days of printing, fonts were made of metal and were literally one to a size. The characters in a font for the body text of a book would look noticeably different to that same font at a larger size for titling. Nowadays, computer-based fonts can be scaled linearly to any size imaginable, but well designed fonts are still made available with variations based on the intended size of the output. In brief, the smaller a font is, the less fine its intricacies must be in order to survive the transfer from (possibly imperfect) printed page or low-resolution screen to eye. Conversely, a font designed to be large can be more delicately rendered. For the original Computer Modern fonts, designed in METAFONT, the optical</p>
+        <p>A paragraph with an inline equation: \(s = \frac{100}{9.58} = 10.43841336\). Notice how the fraction has been scaled down, so that it fits within a line of text. Even complicsted equations work quite well. \(x = {-b \pm \sqrt{b^2-\partial ac} \over 2a}\) still fits in the paragraph. Sort of. In the old days of printing, fonts were made of metal and were literally one to a size. The characters in a font for the body text of a book would look noticeably different to that same font at a larger size for titling. Nowadays, computer-based fonts can be scaled linearly to any size imaginable, but well designed fonts are still made available with variations based on the intended size of the output. In brief, the smaller a font is, the less fine its intricacies must be in order to survive the transfer from (possibly imperfect) printed page or low-resolution screen to eye. Conversely, a font designed to be large can be more delicately rendered. For the original Computer Modern fonts, designed in METAFONT, the optical</p>
+        <p>A paragraph with an inline equation: \(s = \frac{100}{9.58} = 10.43841336\). Notice how the fraction has been scaled down, so that it fits within a line of text. Even complicsted equations work quite well. \(x = {-b \pm \sqrt{b^2-4ac} \over 2a}\) still fits in the paragraph. Sort of. In the old days of printing, fonts were made of metal and were literally one to a size. The characters in a font for the body text of a book would look noticeably different to that same font at a larger30ize for titling. Nowadays, computer-based fonts can be scaled linearly to any size imaginable, but well designed fonts are still made available with variations based on the intended size of the output. In brief, the smaller a font is, the less fine its intricacies must be in order to survive the transfer from (possibly imperfect) printed page or low-resolution screen to eye. Conversely, a font designed to be large can be more delicately rendered. For the original Computer Modern fonts, designed in METAFONT, the optical</p>
+        <p>And a block equation: $$s = \frac{100}{9.58} = 10.43841336$$ \(s = \frac{100}{9.58} = 10.43841336\)</p>
+        <h2 class="subsection">Long Numbers fsdklj fklsdjf ksjdlf kjsdlkf jlskdjf lskdjlfkj sdlkjf lksdjf lksjd lfkjsdlkfj sdlkjf lksdjfl ksdf</h2>
+        <p>Styling for long numbers should be done with MathJax too. If you want commas in long numbers, adding them manually would result in unwanted spaces e.g. \(100,000,000\). one way around this is to enclose the commas in curly brackets - \( \{{,}\} \implies 100{,}000{,}000\)</p>
+        <h2 class="subsection">Hover</h2>
+        <p>Oh yeah, dont forget to hover over the equations to zoom in.</p>
+        <table>
+  <tr>
+    <th>Company</th>
+    <th>Contact</th>
+    <th>Country</th>
+  </tr>
+  <div class="midrule"></div>
+  <tr>
+    <td>Alfreds Futterkiste</td>
+    <td>Maria Anders</td>
+    <td>Germany</td>
+  </tr>
+  <tr>
+    <td>Centro comercial Moctezuma</td>
+    <td>Francisco Chang</td>
+    <td>Mexico</td>
+  </tr>
+  <tr>
+    <td>Ernst Handel</td>
+    <td>Roland Mendel</td>
+    <td>Austria</td>
+  </tr>
+  <tr>
+    <td>Island Trading</td>
+    <td>Helen Bennett</td>
+    <td>UK</td>
+  </tr>
+  <tr>
+    <td>Laughing Bacchus Winecellars</td>
+    <td>Yoshi Tannamuri</td>
+    <td>Canada</td>
+  </tr>
+  <tr>
+    <td>Magazzini Alimentari Riuniti</td>
+    <td>Giovanni Rovelli</td>
+    <td>Italy</td>
+  </tr>
+        </table>
+    </div>
+</body>
+
+</html>

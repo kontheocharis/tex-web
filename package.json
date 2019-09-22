@@ -4,19 +4,20 @@
   "description": "TeX-like feel on the web.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+	"start": "node index.js",
+	"test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
-    "type": "git",
-    "url": "git+https://github.com/kontheocharis/tex-web.git"
+	"type": "git",
+	"url": "git+https://github.com/kontheocharis/tex-web.git"
   },
   "author": "Constantine Theocharis",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/kontheocharis/tex-web/issues"
+	"url": "https://github.com/kontheocharis/tex-web/issues"
   },
   "homepage": "https://github.com/kontheocharis/tex-web#readme",
   "dependencies": {
-    "express": "^4.17.1"
+	"express": "^4.17.1"
   }
 }
